@@ -1,0 +1,101 @@
+#include <iostream>
+#include <string>
+
+//it said not to use muliple cation or divion and mod operator, soooo for loops!
+class Solution {
+public:
+    int divide(int dividend, int divisor) {
+
+        int Herea = 0;
+
+        int NonHera = 0;
+
+        int counter = 0;
+
+
+        if (divisor < 0)
+        {
+            NonHera = -divisor;
+        }
+        else
+        {
+            NonHera = divisor;
+        }
+
+        if (dividend == 0)
+        {
+            return 0;
+        }
+        else if (dividend > 0 && divisor > 0)
+        {
+            while (dividend > Herea)
+            {
+                Herea = Herea + NonHera;
+                counter = counter + 1;
+            }
+
+            if (dividend != Herea)
+            {
+                counter = counter - 1;
+            }
+
+            return counter;
+        }
+        else if (dividend < 0 && divisor < 0)
+        {
+            while (-dividend > Herea)
+            {
+                Herea = Herea + NonHera;
+                counter = counter + 1;
+            }
+
+            if (-dividend != Herea)
+            {
+                counter = counter - 1;
+            }
+
+            return counter;
+        }
+        else
+        {
+            while (-dividend > Herea)
+            {
+                Herea = Herea + NonHera;
+                counter = counter + 1;
+            }
+
+            if (-dividend != Herea)
+            {
+                counter = counter - 1;
+            }
+
+            return -counter;
+        }
+
+    }
+};
+
+int main()
+{
+    Solution GotItish = Solution();
+
+    int Divided = 0;
+
+    int Dividor = 0;
+
+    std::cout << "Please in put a number to be divided that is a int (no decimal)" << std::endl;
+
+    std::cin >> Divided;
+
+    std::cout << " " << std::endl;
+
+    std::cout << "Please in put a number to divide the number above and yes also a int (no decimal)" << std::endl;
+
+    std::cin >> Dividor;
+
+    std::cout << " " << std::endl;
+
+    std::cout << GotItish.divide(Divided, Dividor) << std::endl;
+    std::cout << "^  Thats the number I got...." << std::endl;
+    std::cout << "| " << std::endl;
+}
